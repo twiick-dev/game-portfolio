@@ -1,0 +1,10 @@
+#Images
+*.png
+*.gif
+
+#Audios
+*.mp3
+
+#Fonts
+*.ttf
+
