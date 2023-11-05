@@ -4,16 +4,17 @@ const mouseY = document.getElementById('mouseY');
 
 let character=document.querySelector('#character')
 
-let linkButton1=document.querySelector('#linkButton1')
-let linkButton2=document.querySelector('#linkButton2')
-let linkButton3=document.querySelector('#linkButton3')
-
 let siteSong=document.querySelector('#siteSong')
 siteSong.volume = 0.2;
 let audio=1
 let audioImg=document.querySelector('#audioImg')
 
 let audioButton=document.querySelector('#audioButton')
+let returnButton=document.querySelector('.return')
+
+let linkedinButton=document.querySelector('.linkedin')
+let emailButton=document.querySelector('.email')
+let whatsappButton=document.querySelector('.whatsapp')
 
 document.addEventListener('mousemove', (event) => {
     const x = event.pageX;
@@ -27,22 +28,27 @@ document.addEventListener('mousemove', (event) => {
     else{
         mousePointer.style.display='flex'
     }
-    const rect1 = linkButton1.getBoundingClientRect();
-    const rect2 = linkButton2.getBoundingClientRect();
-    const rect3 = linkButton3.getBoundingClientRect();
     const audioRect = audioButton.getBoundingClientRect();
-    if(x>rect1.left && x<rect1.left+linkButton1.offsetWidth && y>rect1.top && y<rect1.top+linkButton1.offsetHeight){
+    const returnRect = returnButton.getBoundingClientRect();
+    const linkedinRect = linkedinButton.getBoundingClientRect();
+    const emailRect = emailButton.getBoundingClientRect();
+    const whatsappRect = whatsappButton.getBoundingClientRect();
+    if(x>audioRect.left && x<audioRect.left+audioButton.offsetWidth && y>audioRect.top && y<audioRect.top+audioButton.offsetHeight){
         mousePointer.src='../assets/images/CabezaAzulFlecha.png'
     }
-    else if(x>rect2.left && x<rect2.left+linkButton2.offsetWidth && y>rect2.top && y<rect2.top+linkButton2.offsetHeight){
+    else if(x>returnRect.left && x<returnRect.left+returnButton.offsetWidth && y>returnRect.top && y<returnRect.top+returnButton.offsetHeight){
         mousePointer.src='../assets/images/CabezaAzulFlecha.png'
     }
-    else if(x>rect3.left && x<rect3.left+linkButton3.offsetWidth && y>rect3.top && y<rect3.top+linkButton3.offsetHeight){
+    else if(x>linkedinRect.left && x<linkedinRect.left+linkedinButton.offsetWidth && y>linkedinRect.top && y<linkedinRect.top+linkedinButton.offsetHeight){
         mousePointer.src='../assets/images/CabezaAzulFlecha.png'
     }
-    else if(x>audioRect.left && x<audioRect.left+audioButton.offsetWidth && y>audioRect.top && y<audioRect.top+audioButton.offsetHeight){
+    else if(x>emailRect.left && x<emailRect.left+emailButton.offsetWidth && y>emailRect.top && y<emailRect.top+emailButton.offsetHeight){
         mousePointer.src='../assets/images/CabezaAzulFlecha.png'
     }
+    else if(x>whatsappRect.left && x<whatsappRect.left+whatsappButton.offsetWidth && y>whatsappRect.top && y<whatsappRect.top+whatsappButton.offsetHeight){
+            mousePointer.src='../assets/images/CabezaAzulFlecha.png'
+        }
+    
     else{
         mousePointer.src='../assets/images/CabezaFlecha.png'
     }
