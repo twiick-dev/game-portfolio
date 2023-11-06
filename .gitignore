@@ -5,6 +5,9 @@
 #Audios
 *.mp3
 
+#videos
+*.mp4
+
 #Fonts
 *.ttf
 

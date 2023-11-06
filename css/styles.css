@@ -79,12 +79,17 @@ body#homeBody{
     bottom: 0;
     transform: translateY(calc(100% + 4px));
 }
-.aboutMeFirstFloor{
-    background-color: rgb(192, 168, 154);
+.FirstFloor{
     width: 100%;
     height: 100vh;
     display: flex;
     position: relative;
+}
+.aboutMeFirstFloor{
+    background-color: rgb(192, 168, 154);
+}
+.projectsFirstFloor{
+    background-color: rgb(30, 30, 30);
 }
 .ceiling{
     width: 100%;
@@ -332,6 +337,15 @@ body#homeBody{
     top: 0;
     left: 0;
 }
+.pipelines div img:nth-child(2){
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    transform: translateX(-50%) translateY(-50%);
+}
 .pipelines div span{
     background-color: #d6c9ae;
     width: 100px;
@@ -341,7 +355,7 @@ body#homeBody{
     position: absolute;
     top: 0px;
     left: 50%;
-    color: rgb(129, 157, 191);
+    color: #615132;
     font-size: 0;
     border: solid 0px #d59616;
     border-radius: 12px;
@@ -383,6 +397,50 @@ body#homeBody{
     transform: translateX(-50%) translateY(-100%);
     z-index: 4;
 }
+#tv{
+    width: 55%;
+    height: 250px;
+    position: absolute;
+}
+#tv, .tvVideo, .tvImage{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+#tv .tvVideo{
+    width: 65%;
+    aspect-ratio: 1/0.6;
+    object-fit: cover;
+    position: absolute;
+    left: 40%;
+}
+#tv .tvImage{
+    width: 90%;
+    position: absolute;
+}
+#tv .buttons{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 20%;
+    right: 12%;
+    transform: translateY(-50%);
+}
+.upButton, .downButton{
+    background: none;
+    display: flex;
+    border: none;
+}
+.upButton img, .downButton img{
+    width: 100%;
+}
+@media (max-width:1600px) {
+    #tv .buttons{
+        top: 30%;
+    }
+}
 @media (max-width:1000px) {
     .linkButton:nth-child(3){
         top: 25%;
@@ -420,6 +478,9 @@ body#homeBody{
     #audioButton img, .return img{
         width: 60px;
         height: 60px;
+    }
+    #tv{
+        width: 95%;
     }
 }
 @media (max-width:600px) {
@@ -468,5 +529,8 @@ body#homeBody{
         display: grid;
         grid-template-rows: repeat(10, 100px);
         grid-template-columns: repeat(3, 100px);
+    }
+    #tv .buttons{
+        top: 39%;
     }
 }
