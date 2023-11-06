@@ -91,6 +91,13 @@ body#homeBody{
 .projectsFirstFloor{
     background-color: rgb(30, 30, 30);
 }
+.personalProjectsFirstFloor.FirstFloor{
+    height: auto;
+    padding-bottom: 50px;
+}
+.personalProjectsFirstFloor{
+    background-color: #6b4c6b;
+}
 .ceiling{
     width: 100%;
     position: absolute;
@@ -436,9 +443,112 @@ body#homeBody{
 .upButton img, .downButton img{
     width: 100%;
 }
+.myProjectsContent{
+    width: 100%;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.myProjectsContent article{
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.myProjectsContent article img{
+    height: 400px;
+}
+.myProjectsContent article img:nth-child(2){
+    transform: scaleX(-1);
+}
+.myProjectsContent article .projectContainer{
+    width: 50%;
+    display: flex;
+    position: relative;
+}
+.myProjectsContent article .projectContainer video{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    object-fit: cover;
+    opacity: 0.5;
+}
+.myProjectsContent article .projectContent{
+    background-color: #ffffff;
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    animation: maquinita .5s infinite;
+}
+@keyframes maquinita {
+    0%{
+        opacity: 50%;
+    }
+    50%{
+        opacity: 30%;
+    }
+    100%{
+        opacity: 50%;
+    }
+}
+.myProjectsContent article .projectContent h2{
+    padding: 30px 0 20px;
+    color: black;
+    font-size: 32px;
+    text-align: center;
+}
+.myProjectsContent article .projectContent p{
+    padding: 0 10% 20px;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+}
+.myProjectsContent article .light{
+    width: 50%;
+    position: absolute;
+    z-index: 2;
+    animation: maquinita .5s infinite;
+}
+.myProjectsContent article .light.left{
+    margin-left: -5%;
+}
+.myProjectsContent article .light.right{
+    right: 0;
+    transform: scaleX(-1);
+}
 @media (max-width:1600px) {
     #tv .buttons{
         top: 30%;
+    }
+}
+@media (max-width:1200px){
+    .myProjectsContent article{
+        width: 100%;
+        justify-content: center;
+    }
+    .myProjectsContent article img{
+        display: none;
+    }
+    .myProjectsContent article .light{
+        display: none;
+    }
+    .myProjectsContent article .projectContainer{
+        width: 80%;
+    }
+    .myProjectsContent article .projectContainer video{
+        width: 50%;
+        height: 300px;
+        object-fit: cover;
+        position: relative;
+        opacity: 1;
+    }
+    .myProjectsContent article .projectContainer .projectContent{
+        width: 50%;
+        height: 300px;
+        position: relative;
+        animation: none;
     }
 }
 @media (max-width:1000px) {
@@ -481,6 +591,22 @@ body#homeBody{
     }
     #tv{
         width: 95%;
+    }
+    .myProjectsContent article .projectContainer{
+        flex-direction: column;
+    }
+    .myProjectsContent article .projectContainer video{
+        width: 100%;
+    }
+    .myProjectsContent article .projectContainer .projectContent{
+        width: 100%;
+        background: black;
+    }
+    .myProjectsContent article .projectContainer .projectContent h2{
+        color: white;
+    }
+    .myProjectsContent article .projectContainer .projectContent p{
+        color: white;
     }
 }
 @media (max-width:600px) {
@@ -532,5 +658,11 @@ body#homeBody{
     }
     #tv .buttons{
         top: 39%;
+    }
+    .myProjectsContent article .projectContainer{
+        width: 100%;
+    }
+    .myProjectsContent article{
+        padding: 0;
     }
 }
